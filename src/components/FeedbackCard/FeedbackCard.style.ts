@@ -9,7 +9,7 @@ export const Container = styled.article`
   align-items: center;
   justify-content: space-between;
   border: 1px solid ${(props: any) => props.theme.white};
-  transition: 0.2s;
+  transition: 0.5s;
 
   &:hover {
     border: 1px solid ${(props: any) => props.theme.purple};
@@ -19,7 +19,7 @@ export const Container = styled.article`
 export const LeftSide = styled.div`
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
 `;
 
 export const Details = styled.article`

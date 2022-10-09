@@ -33,6 +33,20 @@ function Home() {
           <Banner setSortOrder={setSortOrder} requests={productRequests} />
           {productRequests
             .filter((req: request) => req.status === "suggestion")
+            .sort((a, b): any => {
+              switch (sortOrder) {
+                case "most-upvotes":
+                  return b.upvotes - a.upvotes;
+                case "least-upvotes":
+                  return a.upvotes - b.upvotes;
+                case "most-comments":
+                  return b.comments.length - a.comments.length;
+                case "least-comments":
+                  return a.comments.length - b.comments.length;
+                default:
+                  return b.upvotes - a.upvotes;
+              }
+            })
             .map((req) => {
               return <FeedbackCard key={req.id} feedback={req} />;
             })}

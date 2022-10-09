@@ -23,7 +23,7 @@ export interface comment {
 }
 
 export interface request {
-  id: string | number;
+  id: number;
   title: string;
   category: string;
   upvotes: number;

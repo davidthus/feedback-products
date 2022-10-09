@@ -48,6 +48,7 @@ export const theme = {
   navy: "rgb(55, 63, 104)",
   white: "rgb(255, 255, 255)",
   moderateBlue: "rgb(70, 97, 230)",
+  modBlueHover: "rgb(207, 215, 255)",
   ghost: "rgb(242, 244, 255)",
   purple: "rgb(173, 31, 234)",
   lightBlue: "rgb(100, 113, 150)",

@@ -10,6 +10,7 @@ import RepliesContainer from "./RepliesContainer/RepliesContainer";
 import RoadmapCard from "./RoadmapCard/RoadmapCard";
 import RoadmapGrid from "./RoadmapGrid/RoadmapGrid";
 import RoadmapLink from "./RoadmapLink/RoadmapLink";
+import Upvote from "./Upvote/Upvote";
 
 export {
   AddFeedback,
@@ -24,4 +25,5 @@ export {
   RoadmapCard,
   RoadmapGrid,
   RoadmapLink,
+  Upvote,
 };
