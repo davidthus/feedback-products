@@ -4,10 +4,13 @@ import Select from "react-select";
 import { request } from "../../App";
 import {
   AddFeedback,
+  BackAnchor,
   ButtonWrapper,
   Container,
   FilterSuggestionsWrapper,
   NumOfSuggestions,
+  RoadmapBack,
+  RoadmapHeading,
 } from "./Banner.styled";
 
 export interface SortOption {
@@ -38,30 +41,47 @@ const customStyles = {
   }),
 };
 
-function Banner({ setSortOrder, requests }: any) {
+function Banner({ setSortOrder, requests, roadmap }: any) {
   function handleChange(selectedOption: any) {
     setSortOrder(selectedOption.value);
   }
 
   return (
-    <Container>
-      <FilterSuggestionsWrapper>
-        <img src="/assets/suggestions/icon-suggestions.svg" alt="light bulb" />
-        <NumOfSuggestions>
-          {
-            requests.filter((req: request) => req.status === "suggestion")
-              .length
-          }{" "}
-          Suggestions
-        </NumOfSuggestions>
-        <Select
-          defaultValue={sortOptions[0]}
-          options={sortOptions}
-          styles={customStyles}
-          isSearchable={false}
-          onChange={handleChange}
-        />
-      </FilterSuggestionsWrapper>
+    <Container roadmap={roadmap ? true : false}>
+      {roadmap ? (
+        <RoadmapBack>
+          <Link to="/">
+            <BackAnchor>
+              <img
+                src="/assets/backhome.svg"
+                alt="arrow to go back to the home page"
+              />
+              Go Back
+            </BackAnchor>
+          </Link>
+          <RoadmapHeading>Roadmap</RoadmapHeading>
+        </RoadmapBack>
+      ) : (
+        <FilterSuggestionsWrapper>
+          <img
+            src="/assets/suggestions/icon-suggestions.svg"
+            alt="light bulb"
+          />
+          <NumOfSuggestions>
+            {requests &&
+              requests.filter((req: request) => req.status === "suggestion")
+                .length}{" "}
+            Suggestions
+          </NumOfSuggestions>
+          <Select
+            defaultValue={sortOptions[0]}
+            options={sortOptions}
+            styles={customStyles}
+            isSearchable={false}
+            onChange={handleChange}
+          />
+        </FilterSuggestionsWrapper>
+      )}
       <ButtonWrapper>
         <Link to="/add">
           <AddFeedback>+ Add FeedBack</AddFeedback>
