@@ -1,7 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { request } from "../App";
 import Data from "../data.json";
 
-const initialState = Data.productRequests;
+let initialState: request[];
+
+localStorage.getItem("feedback") !== null
+  ? (initialState = JSON.parse(localStorage.getItem("feedback")!))
+  : (initialState = Data.productRequests);
 
 const FeedbackSlice = createSlice({
   name: "feedback",
