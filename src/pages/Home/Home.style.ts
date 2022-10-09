@@ -19,7 +19,7 @@ export const AppWrapper = styled.main`
 
 export const LeftSide = styled.header`
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   flex-direction: column;
   width: 250px;
 `;
@@ -47,8 +47,46 @@ export const HeaderHeading = styled.h1`
   font-size: 1.5rem;
 `;
 
-export const HeaderSubHeading = styled.h1`
+export const HeaderSubHeading = styled.h2`
   color: ${(props: any) => props.theme.white};
   font-size: 1.1rem;
   font-weight: 300;
+`;
+
+export const NotFoundContainer = styled.article`
+  width: 100%;
+  padding-top: 4rem;
+  display: flex;
+  justify-content: center;
+`;
+
+export const NotFoundWrapper = styled.div`
+  display: flex;
+  gap: 1.4rem;
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const NotFoundHeading = styled.h2`
+  color: ${(props: any) => props.theme.navy};
+  font-size: 1.6rem;
+  font-weight: bold;
+`;
+
+export const NotFoundParagraph = styled.p`
+  color: ${(props: any) => props.theme.lightBlue};
+  font-size: 1rem;
+  font-weight: bold;
+`;
+
+export const AddFeedback = styled.button`
+  background-color: ${(props: any) => props.theme.purple};
+  border-radius: ${(props: any) => props.theme.br};
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  color: ${(props: any) => props.theme.ghost};
+  font-weight: bold;
+  border: none;
+  font-size: 1rem;
 `;
