@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import { Arrow, Container, Number } from "./Upvote.style";
 
-function Upvote({ upvotes, id }: { upvotes: number; id: number }) {
+function Upvote({
+  upvotes,
+  id,
+  roadmap,
+}: {
+  upvotes: number;
+  id: number;
+  roadmap?: boolean;
+}) {
   const [active, setActive] = useState(false);
 
   function handleClick(e: any) {
@@ -10,7 +18,11 @@ function Upvote({ upvotes, id }: { upvotes: number; id: number }) {
   }
 
   return (
-    <Container onClick={handleClick} active={active ? true : false}>
+    <Container
+      onClick={handleClick}
+      active={active ? true : false}
+      roadmap={roadmap ? true : false}
+    >
       <Arrow
         src="https://www.reshot.com/preview-assets/icons/EUCMLYADT9/arrow-chevron-down-EUCMLYADT9.svg"
         alt="arrow"

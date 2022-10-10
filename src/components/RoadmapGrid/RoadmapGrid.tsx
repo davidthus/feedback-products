@@ -1,5 +1,6 @@
 import React from "react";
 import { useAppSelector } from "../../app/hooks";
+import { RoadmapCard } from "../../components";
 import {
   Column,
   ColumnHeading,
@@ -21,6 +22,11 @@ function RoadmapGrid() {
           </ColumnHeading>
           <ColumnSubHeading>Ideas prioritized for research</ColumnSubHeading>
         </ColumnHeadings>
+        {productRequests
+          .filter((req) => req.status === "planned")
+          .map((req) => (
+            <RoadmapCard type="Planned" color="orange" req={req} />
+          ))}
       </Column>
       <Column>
         <ColumnHeadings>
@@ -34,6 +40,11 @@ function RoadmapGrid() {
           </ColumnHeading>
           <ColumnSubHeading>Currently being developed</ColumnSubHeading>
         </ColumnHeadings>
+        {productRequests
+          .filter((req) => req.status === "in-progress")
+          .map((req) => (
+            <RoadmapCard type="In-Progress" color="purple" req={req} />
+          ))}
       </Column>
       <Column>
         <ColumnHeadings>
@@ -43,6 +54,11 @@ function RoadmapGrid() {
           </ColumnHeading>
           <ColumnSubHeading>Released features</ColumnSubHeading>
         </ColumnHeadings>
+        {productRequests
+          .filter((req) => req.status === "live")
+          .map((req) => (
+            <RoadmapCard type="Live" color="brightBlue" req={req} />
+          ))}
       </Column>
     </Container>
   );
