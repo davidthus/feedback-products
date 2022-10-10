@@ -11,7 +11,6 @@
       "category": "enhancement",
       "upvotes": 500,
       "upvoted": false,
-      "active": true,
       "status": "suggestion",
       "description": "Easier to search for solutions based on a specific stack.",
       "comments": [
@@ -43,7 +42,6 @@
       "category": "feature",
       "upvotes": 99,
       "upvoted": false,
-      "active": false,
       "status": "suggestion",
       "description": "It would help people with light sensitivities and who prefer dark mode.",
       "comments": [
@@ -94,7 +92,6 @@
       "category": "feature",
       "upvotes": 65,
       "upvoted": false,
-      "active": false,
       "status": "suggestion",
       "description": "Challenge-specific Q&A would make for easy reference.",
       "comments": [
@@ -116,7 +113,6 @@
       "category": "enhancement",
       "upvotes": 51,
       "upvoted": false,
-      "active": false,
       "status": "suggestion",
       "description": "Images and screencasts can enhance comments on solutions.",
       "comments": [
@@ -148,7 +144,6 @@
       "category": "feature",
       "upvotes": 42,
       "upvoted": false,
-      "active": false,
       "status": "suggestion",
       "description": "Stay updated on comments and solutions other people post.",
       "comments": [
@@ -190,7 +185,6 @@
       "category": "bug",
       "upvotes": 3,
       "upvoted": false,
-      "active": false,
       "status": "suggestion",
       "description": "Challenge preview images are missing when you apply a filter.",
       "comments": []
@@ -201,7 +195,6 @@
       "category": "feature",
       "upvotes": 123,
       "upvoted": false,
-      "active": false,
       "status": "planned",
       "description": "It would be great to see a more detailed breakdown of solutions.",
       "comments": [
@@ -233,7 +226,6 @@
       "category": "feature",
       "upvotes": 28,
       "upvoted": false,
-      "active": false,
       "status": "planned",
       "description": "Sequenced projects for different goals to help people improve.",
       "comments": []
@@ -244,7 +236,6 @@
       "category": "feature",
       "upvotes": 62,
       "upvoted": false,
-      "active": false,
       "status": "in-progress",
       "description": "Add ability to create professional looking portfolio from profile.",
       "comments": [
@@ -266,7 +257,6 @@
       "category": "feature",
       "upvotes": 31,
       "upvoted": false,
-      "active": false,
       "status": "in-progress",
       "description": "Be able to bookmark challenges to take later on.",
       "comments": [
@@ -288,7 +278,6 @@
       "category": "bug",
       "upvotes": 9,
       "upvoted": false,
-      "active": false,
       "status": "in-progress",
       "description": "Screenshots of solutions with animations don’t display correctly.",
       "comments": []
@@ -299,7 +288,6 @@
       "category": "enhancement",
       "upvotes": 71,
       "upvoted": false,
-      "active": false,
       "status": "live",
       "description": "Small animations at specific points can add delight.",
       "comments": [

@@ -14,7 +14,7 @@ import {
 } from "./FeedbackCard.style";
 
 function FeedbackCard({
-  feedback: { id, category, title, description, comments, upvotes },
+  feedback: { id, category, title, description, comments, upvotes, upvoted },
 }: {
   feedback: request;
 }) {
@@ -22,7 +22,7 @@ function FeedbackCard({
     <Link to={"/" + id} style={{ textDecoration: "none" }}>
       <Container>
         <LeftSide>
-          <Upvote upvotes={upvotes} id={id} />
+          <Upvote upvotes={upvotes} id={id} upvoted={upvoted} />
           <Details>
             <Heading>{title}</Heading>
             <Description>{description}</Description>

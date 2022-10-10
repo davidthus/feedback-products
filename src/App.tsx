@@ -27,7 +27,7 @@ export interface request {
   title: string;
   category: string;
   upvotes: number;
-  active: boolean;
+  upvoted: boolean;
   status: string;
   description: string;
   comments: comment[];

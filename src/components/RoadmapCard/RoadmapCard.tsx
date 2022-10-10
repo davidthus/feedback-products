@@ -39,7 +39,12 @@ function RoadmapCard({
         <Category>{req.category}</Category>
       </ContentWrapper>
       <BottomWrapper>
-        <Upvote upvotes={req.upvotes} id={req.id} roadmap />
+        <Upvote
+          upvotes={req.upvotes}
+          id={req.id}
+          upvoted={req.upvoted}
+          roadmap
+        />
         <NumOfCommentsWrapper>
           <img src="/assets/suggestions/comments.svg" alt="comments icon" />
           <NumOfComments>{req.comments.length}</NumOfComments>
