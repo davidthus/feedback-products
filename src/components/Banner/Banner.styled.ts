@@ -56,7 +56,7 @@ export const BackAnchor = styled.button`
   display: flex;
   color: ${(props: any) => props.theme.white};
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.4rem;
   font-size: 0.9rem;
   cursor: pointer;
   border: none;

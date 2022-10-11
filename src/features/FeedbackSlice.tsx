@@ -12,7 +12,18 @@ const FeedbackSlice = createSlice({
   name: "feedback",
   initialState,
   reducers: {
-    addFeedback(state, action) {},
+    addFeedback(state, action: any) {
+      state.push({
+        id: Date.now(),
+        title: action.payload.title,
+        category: action.payload.category,
+        upvotes: 0,
+        upvoted: false,
+        status: "suggestion",
+        description: action.payload.description,
+        comments: [],
+      });
+    },
     upvote(state, action) {
       //find product request that contains payload id
       const index = state.findIndex((req) => req.id === action.payload.id);

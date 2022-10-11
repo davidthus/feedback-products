@@ -13,7 +13,7 @@ import {
   RoadmapHeading,
 } from "./Banner.styled";
 
-export interface SortOption {
+interface SortOption {
   readonly value: string;
   readonly label: string;
 }
@@ -50,7 +50,7 @@ function Banner({ setSortOrder, requests, roadmap }: any) {
     <Container roadmap={roadmap ? true : false}>
       {roadmap ? (
         <RoadmapBack>
-          <Link to="/">
+          <Link to="/" style={{ textDecoration: "none" }}>
             <BackAnchor>
               <img
                 src="/assets/backhome.svg"
