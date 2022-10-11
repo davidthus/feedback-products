@@ -1,10 +1,15 @@
 import { createListenerMiddleware, isAnyOf } from "@reduxjs/toolkit";
-import { addFeedback, upvote } from "../features/FeedbackSlice";
+import {
+  addFeedback,
+  deleteFeedback,
+  editFeedback,
+  upvote,
+} from "../features/FeedbackSlice";
 import type { RootState } from "./store";
 
 export const listenerMiddleware = createListenerMiddleware();
 listenerMiddleware.startListening({
-  matcher: isAnyOf(addFeedback, upvote),
+  matcher: isAnyOf(addFeedback, upvote, editFeedback, deleteFeedback),
   effect: (action, listenerApi) =>
     localStorage.setItem(
       "feedback",

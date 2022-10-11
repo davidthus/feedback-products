@@ -9,18 +9,17 @@ export const Container = styled.main`
   @media screen and (max-width: 700px) {
     position: absolute;
     width: 100vw;
-    height: 100vh;
   }
 `;
 
-export const AddIcon = styled.img`
+export const EditIcon = styled.img`
   width: 3.5rem;
   height: auto;
   transform: translateY(-1.75rem);
 `;
 
 export const TopWrapper = styled.aside`
-  padding-inline: 1.75rem;
+  padding-inline: 3.5rem;
 
   @media screen and (max-width: 700px) {
     display: none;
@@ -97,8 +96,8 @@ export const ButtonsWrapper = styled.div`
   justify-content: flex-end;
   gap: 1rem;
 
-  @media screen and (max-width: 300px) {
-    flex-direction: column;
+  @media screen and (max-width: 450px) {
+    flex-direction: column-reverse;
     width: 100%;
   }
 `;
@@ -111,7 +110,7 @@ const Button = styled.button`
   font-size: 1.1rem;
   cursor: pointer;
 
-  @media screen and (max-width: 300px) {
+  @media screen and (max-width: 450px) {
     width: 100%;
   }
 `;
@@ -121,15 +120,21 @@ export const Cancel = styled(Button)`
   color: ${(props: any) => props.theme.white};
 `;
 
-export const AddFeedbackButton = styled(Button)`
+export const SaveChanges = styled(Button)`
   color: ${(props: any) => props.theme.white};
   background-color: ${(props: any) => props.theme.purple};
+`;
+
+export const Delete = styled(Button)`
+  color: ${(props: any) => props.theme.white};
+  background-color: ${(props: any) => props.theme.red};
+  margin-right: auto;
 `;
 
 export const CancelWrapper = styled.div`
   width: auto;
 
-  @media screen and (max-width: 300px) {
+  @media screen and (max-width: 450px) {
     width: 100%;
   }
 `;

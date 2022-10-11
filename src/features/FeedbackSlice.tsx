@@ -12,7 +12,7 @@ const FeedbackSlice = createSlice({
   name: "feedback",
   initialState,
   reducers: {
-    addFeedback(state, action: any) {
+    addFeedback: (state, action: any) => {
       state.push({
         id: Date.now(),
         title: action.payload.title,
@@ -24,7 +24,7 @@ const FeedbackSlice = createSlice({
         comments: [],
       });
     },
-    upvote(state, action) {
+    upvote: (state, action) => {
       //find product request that contains payload id
       const index = state.findIndex((req) => req.id === action.payload.id);
       //check to see if the request is already upvoted, if it is, make upvoted false and decrement upvotes
@@ -37,8 +37,24 @@ const FeedbackSlice = createSlice({
       }
       // if it isnt, increment the upvotes
     },
+    editFeedback: (state, action: any) => {
+      const index = state.findIndex(
+        (req) => req.id === Number(action.payload.id)
+      );
+      state[index] = {
+        ...state[index],
+        status: action.payload.status,
+        title: action.payload.title,
+        category: action.payload.category,
+        description: action.payload.description,
+      };
+    },
+    deleteFeedback: (state, action: any) => {
+      return state.filter((req) => req.id !== action.payload.id);
+    },
   },
 });
 
-export const { addFeedback, upvote } = FeedbackSlice.actions;
+export const { addFeedback, upvote, editFeedback, deleteFeedback } =
+  FeedbackSlice.actions;
 export default FeedbackSlice.reducer;

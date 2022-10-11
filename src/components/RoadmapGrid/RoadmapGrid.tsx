@@ -24,8 +24,8 @@ function RoadmapGrid() {
         </ColumnHeadings>
         {productRequests
           .filter((req) => req.status === "planned")
-          .map((req) => (
-            <RoadmapCard type="Planned" color="orange" req={req} />
+          .map((req, index) => (
+            <RoadmapCard key={index} type="Planned" color="orange" req={req} />
           ))}
       </Column>
       <Column>
@@ -42,8 +42,13 @@ function RoadmapGrid() {
         </ColumnHeadings>
         {productRequests
           .filter((req) => req.status === "in-progress")
-          .map((req) => (
-            <RoadmapCard type="In-Progress" color="purple" req={req} />
+          .map((req, index) => (
+            <RoadmapCard
+              key={index}
+              type="In-Progress"
+              color="purple"
+              req={req}
+            />
           ))}
       </Column>
       <Column>
@@ -56,8 +61,8 @@ function RoadmapGrid() {
         </ColumnHeadings>
         {productRequests
           .filter((req) => req.status === "live")
-          .map((req) => (
-            <RoadmapCard type="Live" color="brightBlue" req={req} />
+          .map((req, index) => (
+            <RoadmapCard key={index} type="Live" color="brightBlue" req={req} />
           ))}
       </Column>
     </Container>

@@ -69,8 +69,6 @@ function AddFeedback() {
     },
   });
 
-  console.log(errors);
-
   return (
     <Container>
       <TopWrapper>
