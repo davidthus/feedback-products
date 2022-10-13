@@ -12,7 +12,10 @@ export const Container = styled.article`
   transition: 0.5s;
 
   &:hover {
-    border: 1px solid ${(props: any) => props.theme.purple};
+    border: ${(props: any) =>
+      props.page
+        ? `1px solid ${props.theme.white}`
+        : `1px solid ${props.theme.purple}`};
   }
 `;
 

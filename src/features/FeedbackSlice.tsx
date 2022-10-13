@@ -52,9 +52,51 @@ const FeedbackSlice = createSlice({
     deleteFeedback: (state, action: any) => {
       return state.filter((req) => req.id !== action.payload.id);
     },
+    addComment: (state, action: any) => {
+      const index = state.findIndex(
+        (req) => req.id === Number(action.payload.id)
+      );
+
+      state[index].comments.push({
+        id: Date.now(),
+        content: action.payload.content,
+        user: action.payload.user,
+        replies: [],
+      });
+    },
+    addReply: (state, action: any) => {
+      const feedbackIndex = state.findIndex(
+        (req) => req.id === Number(action.payload.feedbackId)
+      );
+
+      const commentIndex = state[feedbackIndex].comments.findIndex(
+        (comment) => {
+          return comment.id === action.payload.commentId;
+        }
+      );
+
+      state[feedbackIndex].comments[commentIndex].replies.push({
+        user: action.payload.currentUser,
+        content: action.payload.content,
+        replyingTo: action.payload.user.username,
+      });
+
+      // state[index].comments.push({
+      //   id: Date.now(),
+      //   content: action.payload.content,
+      //   user: action.payload.user,
+      //   replies: [],
+      // });
+    },
   },
 });
 
-export const { addFeedback, upvote, editFeedback, deleteFeedback } =
-  FeedbackSlice.actions;
+export const {
+  addFeedback,
+  upvote,
+  editFeedback,
+  deleteFeedback,
+  addComment,
+  addReply,
+} = FeedbackSlice.actions;
 export default FeedbackSlice.reducer;
