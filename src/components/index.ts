@@ -7,6 +7,7 @@ import FeedbackCard from "./FeedbackCard/FeedbackCard";
 import Filter from "./Filter/Filter";
 import Input from "./Input/Input";
 import RepliesContainer from "./RepliesContainer/RepliesContainer";
+import Reply from "./Reply/Reply";
 import ReplyInput from "./ReplyInput/ReplyInput";
 import RoadmapCard from "./RoadmapCard/RoadmapCard";
 import RoadmapGrid from "./RoadmapGrid/RoadmapGrid";
@@ -28,4 +29,5 @@ export {
   RoadmapLink,
   Upvote,
   ReplyInput,
+  Reply,
 };

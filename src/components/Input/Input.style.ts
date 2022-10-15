@@ -47,7 +47,7 @@ export const PostComment = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: 1px solid rgb(199, 90, 246);
+    background: rgb(199, 90, 246);
   }
 `;
 

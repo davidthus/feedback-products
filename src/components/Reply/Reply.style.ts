@@ -2,13 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.article`
   display: flex;
-  gap: 2rem;
   width: 100%;
-
-  &:not(:last-child) {
-    border-bottom: 1px solid rgb(140 146 179 / 25%);
-    padding-bottom: 3rem;
-  }
+  margin-top: 2rem;
 `;
 
 export const UserAvatar = styled.img`
@@ -21,7 +16,7 @@ export const AvatarWrapper = styled.aside`
   width: 50px;
 `;
 
-export const CommentContent = styled.div`
+export const ReplyContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -69,4 +64,11 @@ export const ReplyButton = styled.button`
   &:hover {
     text-decoration: none;
   }
+`;
+
+export const ReplyingTo = styled.b`
+  font-size: 0.9rem;
+  color: ${(props: any) => props.theme.purple};
+  width: 100%;
+  font-weight: 600;
 `;

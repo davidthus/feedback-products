@@ -4,6 +4,7 @@ export const Container = styled.form`
   display: flex;
   gap: 0.5rem;
   flex-direction: column;
+  width: 100%;
 `;
 
 export const TextArea = styled.textarea`
@@ -27,6 +28,11 @@ export const PostReply = styled.button`
   font-weight: bold;
   border: none;
   cursor: pointer;
+  font-size: 1rem;
+
+  &:hover {
+    background: rgb(199, 90, 246);
+  }
 `;
 
 export const ErrorText = styled.p`

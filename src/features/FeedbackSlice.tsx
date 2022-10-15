@@ -80,13 +80,6 @@ const FeedbackSlice = createSlice({
         content: action.payload.content,
         replyingTo: action.payload.user.username,
       });
-
-      // state[index].comments.push({
-      //   id: Date.now(),
-      //   content: action.payload.content,
-      //   user: action.payload.user,
-      //   replies: [],
-      // });
     },
   },
 });
