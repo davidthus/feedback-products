@@ -9,25 +9,37 @@ export const Container = styled.div`
 `;
 
 export const AppWrapper = styled.main`
-  display: grid;
-  grid-template-columns: 250px auto;
-  column-gap: 1rem;
+  display: flex;
+  gap: 1rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   padding: 1rem;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 export const LeftSide = styled.header`
   display: flex;
   gap: 1rem;
   flex-direction: column;
-  width: 250px;
+  min-width: 250px;
+  max-width: 250px;
+
+  @media screen and (max-width: 900px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    max-width: fit-content;
+  }
 `;
 
 export const RightSide = styled.section`
   display: flex;
   gap: 1rem;
   flex-direction: column;
+  width: 100%;
 `;
 
 export const Header = styled.section`
@@ -40,6 +52,13 @@ export const Header = styled.section`
   align-items: flex-start;
   justify-content: flex-end;
   flex-direction: column;
+
+  @media screen and (max-width: 900px) {
+    height: 100%;
+    background-image: url(/assets/suggestions/tablet/background-header.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 `;
 
 export const HeaderHeading = styled.h1`
