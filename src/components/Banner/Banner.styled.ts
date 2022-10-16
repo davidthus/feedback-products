@@ -8,6 +8,14 @@ export const Container = styled.aside`
   border-radius: ${(props: any) => props.theme.br};
   align-items: center;
   padding: 1rem 1.75rem;
+
+  @media screen and (max-width: 650px) {
+    border-radius: ${(props: any) => (props.roadmap ? props.theme.br : 0)};
+  }
+
+  @media screen and (max-width: 650px) {
+    padding: 1rem;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -26,6 +34,13 @@ export const AddFeedback = styled.button`
   font-weight: bold;
   border: none;
   font-size: 1rem;
+  display: ${(props: any) => (props.mobile ? "none" : "inline-block")};
+
+  @media screen and (max-width: 650px) {
+    display: ${(props: any) => (props.mobile ? "inline-block" : "none")};
+    font-size: ${(props: any) => (props.mobile ? "2rem" : "1rem")};
+    padding: ${(props: any) => (props.mobile ? "0 1rem" : "0.6rem 1rem")};
+  }
 `;
 
 export const FilterSuggestionsWrapper = styled.div`
@@ -38,6 +53,10 @@ export const NumOfSuggestions = styled.p`
   color: ${(props: any) => props.theme.white};
   font-size: 1.2rem;
   font-weight: bold;
+
+  @media screen and (max-width: 650px) {
+    display: none;
+  }
 `;
 
 export const RoadmapBack = styled.div`
@@ -64,5 +83,11 @@ export const BackAnchor = styled.button`
 
   &:hover {
     text-decoration: underline;
+  }
+`;
+
+export const LightBulb = styled.img`
+  @media screen and (max-width: 650px) {
+    display: none;
   }
 `;

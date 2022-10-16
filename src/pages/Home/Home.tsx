@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { request } from "../../App";
 import { useAppSelector } from "../../app/hooks";
 import { Banner, FeedbackCard, Filter, RoadmapLink } from "../../components";
+import { useMatchMedia } from "../../hooks/useMatchMedia";
 import {
   AddFeedback,
   AppWrapper,
@@ -10,7 +11,10 @@ import {
   Header,
   HeaderHeading,
   HeaderSubHeading,
+  HeadingsWrapper,
+  IconWrapper,
   LeftSide,
+  MenuToggle,
   NotFoundContainer,
   NotFoundHeading,
   NotFoundParagraph,
@@ -20,19 +24,44 @@ import {
 
 function Home() {
   const productRequests = useAppSelector((state) => state.feedback);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [sortOrder, setSortOrder] = useState<string>("most-upvotes");
   const [category, setCategory] = useState<string>("all");
+  const { isMobileSize, isTabletSize, isDesktopSize } = useMatchMedia();
 
   return (
     <Container>
       <AppWrapper>
         <LeftSide>
           <Header>
-            <HeaderHeading>Frontend Mentor</HeaderHeading>
-            <HeaderSubHeading>Feedback board</HeaderSubHeading>
+            <HeadingsWrapper>
+              <HeaderHeading>Frontend Mentor</HeaderHeading>
+              <HeaderSubHeading>Feedback board</HeaderSubHeading>
+            </HeadingsWrapper>
+            {isMobileSize && (
+              <IconWrapper>
+                <MenuToggle onClick={() => setMenuOpen((prev) => !prev)}>
+                  {menuOpen ? (
+                    <img
+                      src="https://lm-product-feedback-app.netlify.app/static/media/icon-close.dd55c392.svg"
+                      alt="close menu icon"
+                    />
+                  ) : (
+                    <img
+                      src="https://lm-product-feedback-app.netlify.app/static/media/icon-hamburger.a8bc4c8c.svg"
+                      alt="hamburger icon"
+                    />
+                  )}
+                </MenuToggle>
+              </IconWrapper>
+            )}
           </Header>
-          <Filter category={category} setCategory={setCategory} />
-          <RoadmapLink productRequests={productRequests} />
+          {(isTabletSize || isDesktopSize) && (
+            <>
+              <Filter category={category} setCategory={setCategory} />
+              <RoadmapLink productRequests={productRequests} />
+            </>
+          )}
         </LeftSide>
         <RightSide>
           <Banner setSortOrder={setSortOrder} requests={productRequests} />

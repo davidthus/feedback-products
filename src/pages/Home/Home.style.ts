@@ -6,6 +6,10 @@ export const Container = styled.div`
   padding: 3rem 0.45rem 0.45rem 0.45rem;
   display: flex;
   justify-content: center;
+
+  @media screen and (max-width: 650px) {
+    padding: 0;
+  }
 `;
 
 export const AppWrapper = styled.main`
@@ -17,6 +21,11 @@ export const AppWrapper = styled.main`
 
   @media screen and (max-width: 900px) {
     flex-direction: column;
+  }
+
+  @media screen and (max-width: 650px) {
+    padding: 0;
+    gap: 0;
   }
 `;
 
@@ -32,6 +41,10 @@ export const LeftSide = styled.header`
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
     max-width: fit-content;
+  }
+  @media screen and (max-width: 650px) {
+    display: flex;
+    max-width: 100%;
   }
 `;
 
@@ -59,6 +72,12 @@ export const Header = styled.section`
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  @media screen and (max-width: 650px) {
+    border-radius: 0;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 export const HeaderHeading = styled.h1`
@@ -70,6 +89,13 @@ export const HeaderSubHeading = styled.h2`
   color: ${(props: any) => props.theme.white};
   font-size: 1.1rem;
   font-weight: 300;
+`;
+
+export const HeadingsWrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-direction: column;
 `;
 
 export const NotFoundContainer = styled.article`
@@ -108,4 +134,17 @@ export const AddFeedback = styled.button`
   font-weight: bold;
   border: none;
   font-size: 1rem;
+`;
+
+export const MenuToggle = styled.button`
+  background: transparent;
+  border: none;
+  cursor: pointer;
+`;
+
+export const IconWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
 `;

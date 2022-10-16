@@ -8,6 +8,7 @@ import {
   ButtonWrapper,
   Container,
   FilterSuggestionsWrapper,
+  LightBulb,
   NumOfSuggestions,
   RoadmapBack,
   RoadmapHeading,
@@ -63,7 +64,7 @@ function Banner({ setSortOrder, requests, roadmap }: any) {
         </RoadmapBack>
       ) : (
         <FilterSuggestionsWrapper>
-          <img
+          <LightBulb
             src="/assets/suggestions/icon-suggestions.svg"
             alt="light bulb"
           />
@@ -85,6 +86,7 @@ function Banner({ setSortOrder, requests, roadmap }: any) {
       <ButtonWrapper>
         <Link to="/add">
           <AddFeedback>+ Add FeedBack</AddFeedback>
+          <AddFeedback mobile>+</AddFeedback>
         </Link>
       </ButtonWrapper>
     </Container>
