@@ -9,6 +9,10 @@ export const Container = styled.article`
     border-bottom: 1px solid rgb(140 146 179 / 25%);
     padding-bottom: 3rem;
   }
+
+  @media screen and (max-width: 600px) {
+    gap: min(0.2rem, 3vw);
+  }
 `;
 
 export const UserAvatar = styled.img`

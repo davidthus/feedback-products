@@ -3,14 +3,22 @@ import { Link } from "react-router-dom";
 import { request } from "../../App";
 import { Upvote } from "../../components";
 import {
+  BottomWrapper,
   Category,
   Container,
   Description,
   Details,
   Heading,
+  HomeBottomWrapper,
+  HomeContainer,
+  HomeLeftSide,
+  HomeNumOfCommentsDesktop,
+  HomeUpvoteWrapper,
   LeftSide,
   NumOfComments,
+  NumOfCommentsDesktop,
   NumOfCommentsWrapper,
+  UpvoteWrapper,
 } from "./FeedbackCard.style";
 
 function FeedbackCard({
@@ -23,34 +31,56 @@ function FeedbackCard({
   return page ? (
     <Container page>
       <LeftSide>
-        <Upvote upvotes={upvotes} id={id} upvoted={upvoted} />
+        <UpvoteWrapper>
+          <Upvote upvotes={upvotes} id={id} upvoted={upvoted} />
+        </UpvoteWrapper>
         <Details>
           <Heading>{title}</Heading>
           <Description>{description}</Description>
           <Category>{category}</Category>
         </Details>
       </LeftSide>
-      <NumOfCommentsWrapper>
-        <img src="/assets/suggestions/comments.svg" alt="comments icon" />
-        <NumOfComments>{comments.length}</NumOfComments>
-      </NumOfCommentsWrapper>
+      <NumOfCommentsDesktop>
+        <NumOfCommentsWrapper>
+          <img src="/assets/suggestions/comments.svg" alt="comments icon" />
+          <NumOfComments>{comments.length}</NumOfComments>
+        </NumOfCommentsWrapper>
+      </NumOfCommentsDesktop>
+      <BottomWrapper>
+        <Upvote upvotes={upvotes} id={id} upvoted={upvoted} horizontal />
+        <NumOfCommentsWrapper>
+          <img src="/assets/suggestions/comments.svg" alt="comments icon" />
+          <NumOfComments>{comments.length}</NumOfComments>
+        </NumOfCommentsWrapper>
+      </BottomWrapper>
     </Container>
   ) : (
     <Link to={"/" + id} style={{ textDecoration: "none", width: "100%" }}>
-      <Container>
-        <LeftSide>
-          <Upvote upvotes={upvotes} id={id} upvoted={upvoted} />
+      <HomeContainer>
+        <HomeLeftSide>
+          <HomeUpvoteWrapper>
+            <Upvote upvotes={upvotes} id={id} upvoted={upvoted} />
+          </HomeUpvoteWrapper>
           <Details>
             <Heading>{title}</Heading>
             <Description>{description}</Description>
             <Category>{category}</Category>
           </Details>
-        </LeftSide>
-        <NumOfCommentsWrapper>
-          <img src="/assets/suggestions/comments.svg" alt="comments icon" />
-          <NumOfComments>{comments.length}</NumOfComments>
-        </NumOfCommentsWrapper>
-      </Container>
+        </HomeLeftSide>
+        <HomeNumOfCommentsDesktop>
+          <NumOfCommentsWrapper>
+            <img src="/assets/suggestions/comments.svg" alt="comments icon" />
+            <NumOfComments>{comments.length}</NumOfComments>
+          </NumOfCommentsWrapper>
+        </HomeNumOfCommentsDesktop>
+        <HomeBottomWrapper>
+          <Upvote upvotes={upvotes} id={id} upvoted={upvoted} horizontal />
+          <NumOfCommentsWrapper>
+            <img src="/assets/suggestions/comments.svg" alt="comments icon" />
+            <NumOfComments>{comments.length}</NumOfComments>
+          </NumOfCommentsWrapper>
+        </HomeBottomWrapper>
+      </HomeContainer>
     </Link>
   );
 }

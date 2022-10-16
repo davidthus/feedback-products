@@ -4,15 +4,15 @@ export const Container = styled.button`
   border-radius: ${(props: any) => props.theme.br};
   cursor: pointer;
   display: flex;
-  flex-direction: ${(props: any) => (props.roadmap ? "row" : "column")};
+  flex-direction: ${(props: any) => (props.horizontal ? "row" : "column")};
   align-items: center;
   background-color: ${(props: any) =>
     props.active ? props.theme.moderateBlue : props.theme.ghost};
   padding: 0.5rem;
   border: none;
-  gap: ${(props: any) => (props.roadmap ? "1rem" : "auto")};
-  width: ${(props: any) => (props.roadmap ? "auto" : "2.8rem")};
-  height: ${(props: any) => (props.roadmap ? "2.8rem" : "auto")};
+  gap: ${(props: any) => (props.horizontal ? "1rem" : "auto")};
+  width: ${(props: any) => (props.horizontal ? "auto" : "2.8rem")};
+  height: ${(props: any) => (props.horizontal ? "2.8rem" : "auto")};
 
   &:hover {
     background-color: ${(props: any) =>

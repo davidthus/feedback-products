@@ -9,6 +9,10 @@ export const Container = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+
+  @media screen and (max-width: 600px) {
+    padding: 1.5rem max(3vw, 0.3rem);
+  }
 `;
 
 export const Heading = styled.h2`

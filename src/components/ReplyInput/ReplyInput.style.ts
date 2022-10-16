@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.form`
   display: flex;
   gap: 0.5rem;
-  flex-direction: column;
   width: 100%;
 `;
 
@@ -17,6 +16,10 @@ export const TextArea = styled.textarea`
   font-size: 1rem;
   height: 6rem;
   color: ${(props: any) => props.theme.lightBlue};
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const PostReply = styled.button`
@@ -33,6 +36,10 @@ export const PostReply = styled.button`
   &:hover {
     background: rgb(199, 90, 246);
   }
+
+  @media screen and (max-width: 600px) {
+    max-width: 9rem;
+  }
 `;
 
 export const ErrorText = styled.p`
@@ -46,4 +53,10 @@ export const Inputs = styled.div`
   width: 100%;
   display: flex;
   gap: 2rem;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+  }
 `;

@@ -6,12 +6,12 @@ import { Arrow, Container, Number } from "./Upvote.style";
 function Upvote({
   upvotes,
   id,
-  roadmap,
+  horizontal,
   upvoted,
 }: {
   upvotes: number;
   id: number;
-  roadmap?: boolean;
+  horizontal?: boolean;
   upvoted: boolean;
 }) {
   const dispatch = useAppDispatch();
@@ -26,7 +26,7 @@ function Upvote({
     <Container
       onClick={handleClick}
       active={upvoted ? true : false}
-      roadmap={roadmap ? true : false}
+      horizontal={horizontal ? true : false}
     >
       <Arrow
         src="https://www.reshot.com/preview-assets/icons/EUCMLYADT9/arrow-chevron-down-EUCMLYADT9.svg"

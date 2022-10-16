@@ -9,6 +9,10 @@ export const Container = styled.form`
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+
+  @media screen and (max-width: 600px) {
+    padding: 2rem 1rem;
+  }
 `;
 
 export const Heading = styled.h2`
@@ -34,6 +38,12 @@ export const BottomWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-end;
+  }
 `;
 
 export const PostComment = styled.button`
@@ -54,6 +64,13 @@ export const PostComment = styled.button`
 export const CharactersLeft = styled.p`
   color: ${(props: any) => props.theme.lightBlue};
   font-size: 1.1rem;
+  text-align: left;
+  flex: 1;
+
+  @media screen and (max-width: 600px) {
+    text-align: left;
+    width: 100%;
+  }
 `;
 
 export const ErrorText = styled.p`

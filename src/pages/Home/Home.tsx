@@ -22,7 +22,6 @@ function Home() {
   const productRequests = useAppSelector((state) => state.feedback);
   const [sortOrder, setSortOrder] = useState<string>("most-upvotes");
   const [category, setCategory] = useState<string>("all");
-  console.log(productRequests);
 
   return (
     <Container>

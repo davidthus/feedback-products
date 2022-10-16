@@ -43,7 +43,7 @@ function RoadmapCard({
           upvotes={req.upvotes}
           id={req.id}
           upvoted={req.upvoted}
-          roadmap
+          horizontal
         />
         <NumOfCommentsWrapper>
           <img src="/assets/suggestions/comments.svg" alt="comments icon" />
