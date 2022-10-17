@@ -48,8 +48,9 @@ function Roadmap() {
         <Banner roadmap />
         {isMobileSize && (
           <TabsContainer>
-            {tabs.map((tab) => (
+            {tabs.map((tab, index) => (
               <Tab
+                key={index}
                 color={tab.color}
                 active={tab.status === activeTab ? true : false}
                 onClick={() => setActiveTab(tab.status)}

@@ -17,9 +17,9 @@ interface Props {
 function RoadmapGrid({ tabs, mobile }: Props) {
   return (
     <Container mobile={mobile ? true : false}>
-      {tabs.map((tab) => {
+      {tabs.map((tab, index) => {
         return (
-          <Column>
+          <Column key={index}>
             <ColumnHeadings>
               <ColumnHeading>
                 {tab.title} ({tab.requests.length})

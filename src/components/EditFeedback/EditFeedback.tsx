@@ -55,7 +55,6 @@ function EditFeedback() {
     return req;
   }
   const Request = findReq(id);
-  console.log(Request);
 
   const [CategoryObject] = categoryOptions.filter(
     (option) => option.value === Request.category
@@ -85,7 +84,6 @@ function EditFeedback() {
       </TopWrapper>
       <BottomWrapper
         onSubmit={handleSubmit((data) => {
-          console.log(data);
           dispatch(
             editFeedback({
               title: data.title,
@@ -95,7 +93,7 @@ function EditFeedback() {
               id: id,
             })
           );
-          navigate("/");
+          navigate(-1);
         })}
       >
         <MainHeading>Create New Feedback</MainHeading>
@@ -184,9 +182,16 @@ function EditFeedback() {
             Delete
           </Delete>
           <CancelWrapper>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <Cancel>Cancel</Cancel>
-            </Link>
+            {/* <Link to="/" style={{ textDecoration: "none" }}> */}
+            <Cancel
+              onClick={(e: any) => {
+                e.preventDefault();
+                navigate(-1);
+              }}
+            >
+              Cancel
+            </Cancel>
+            {/* </Link> */}
           </CancelWrapper>
           <SaveChanges type="submit">Save Changes</SaveChanges>
         </ButtonsWrapper>

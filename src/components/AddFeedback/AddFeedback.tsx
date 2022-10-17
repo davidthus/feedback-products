@@ -1,3 +1,5 @@
+import { Controller, useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
 import {
   AddFeedbackButton,
   AddIcon,
@@ -15,13 +17,11 @@ import {
   MainHeading,
   TopWrapper,
 } from "./AddFeedback.style";
-import { Controller, useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
 
 import React from "react";
 import Select from "react-select";
-import { addFeedback } from "../../features/FeedbackSlice";
 import { useAppDispatch } from "../../app/hooks";
+import { addFeedback } from "../../features/FeedbackSlice";
 
 export const categoryOptions = [
   { value: "ux", label: "UX" },
@@ -141,9 +141,16 @@ function AddFeedback() {
         </Group>
         <ButtonsWrapper>
           <CancelWrapper>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <Cancel>Cancel</Cancel>
-            </Link>
+            {/* <Link to="/" style={{ textDecoration: "none" }}> */}
+            <Cancel
+              onClick={(e: any) => {
+                e.preventDefault();
+                navigate(-1);
+              }}
+            >
+              Cancel
+            </Cancel>
+            {/* </Link> */}
           </CancelWrapper>
           <AddFeedbackButton type="submit">Add Feedback</AddFeedbackButton>
         </ButtonsWrapper>
