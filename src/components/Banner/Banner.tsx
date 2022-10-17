@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Select from "react-select";
 import { request } from "../../App";
+import { useMatchMedia } from "../../hooks/useMatchMedia";
+import { ReactComponent as AddIcon } from "../../shared/icon-plus.svg";
 import {
   AddFeedback,
   BackAnchor,
@@ -43,6 +45,8 @@ const customStyles = {
 };
 
 function Banner({ setSortOrder, requests, roadmap }: any) {
+  const { isMobileSize, isTabletSize, isDesktopSize } = useMatchMedia();
+
   function handleChange(selectedOption: any) {
     setSortOrder(selectedOption.value);
   }
@@ -85,8 +89,15 @@ function Banner({ setSortOrder, requests, roadmap }: any) {
       )}
       <ButtonWrapper>
         <Link to="/add">
-          <AddFeedback>+ Add FeedBack</AddFeedback>
-          <AddFeedback mobile>+</AddFeedback>
+          {isMobileSize && !roadmap && (
+            <AddFeedback>
+              <AddIcon />
+            </AddFeedback>
+          )}
+          {isMobileSize && roadmap && <AddFeedback>+ Add FeedBack</AddFeedback>}
+          {(isTabletSize || isDesktopSize) && (
+            <AddFeedback>+ Add FeedBack</AddFeedback>
+          )}
         </Link>
       </ButtonWrapper>
     </Container>

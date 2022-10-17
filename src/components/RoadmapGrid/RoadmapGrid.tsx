@@ -1,6 +1,6 @@
 import React from "react";
-import { useAppSelector } from "../../app/hooks";
 import { RoadmapCard } from "../../components";
+import { roadmapTab } from "../../pages/Roadmap/Roadmap";
 import {
   Column,
   ColumnHeading,
@@ -9,62 +9,34 @@ import {
   Container,
 } from "./RoadmapGrid.style";
 
-function RoadmapGrid() {
-  const productRequests = useAppSelector((state) => state.feedback);
+interface Props {
+  tabs: roadmapTab[];
+  mobile?: boolean;
+}
 
+function RoadmapGrid({ tabs, mobile }: Props) {
   return (
-    <Container>
-      <Column>
-        <ColumnHeadings>
-          <ColumnHeading>
-            Planned (
-            {productRequests.filter((req) => req.status === "planned").length})
-          </ColumnHeading>
-          <ColumnSubHeading>Ideas prioritized for research</ColumnSubHeading>
-        </ColumnHeadings>
-        {productRequests
-          .filter((req) => req.status === "planned")
-          .map((req, index) => (
-            <RoadmapCard key={index} type="Planned" color="orange" req={req} />
-          ))}
-      </Column>
-      <Column>
-        <ColumnHeadings>
-          <ColumnHeading>
-            In-Progress (
-            {
-              productRequests.filter((req) => req.status === "in-progress")
-                .length
-            }
-            )
-          </ColumnHeading>
-          <ColumnSubHeading>Currently being developed</ColumnSubHeading>
-        </ColumnHeadings>
-        {productRequests
-          .filter((req) => req.status === "in-progress")
-          .map((req, index) => (
-            <RoadmapCard
-              key={index}
-              type="In-Progress"
-              color="purple"
-              req={req}
-            />
-          ))}
-      </Column>
-      <Column>
-        <ColumnHeadings>
-          <ColumnHeading>
-            Live (
-            {productRequests.filter((req) => req.status === "live").length})
-          </ColumnHeading>
-          <ColumnSubHeading>Released features</ColumnSubHeading>
-        </ColumnHeadings>
-        {productRequests
-          .filter((req) => req.status === "live")
-          .map((req, index) => (
-            <RoadmapCard key={index} type="Live" color="brightBlue" req={req} />
-          ))}
-      </Column>
+    <Container mobile={mobile ? true : false}>
+      {tabs.map((tab) => {
+        return (
+          <Column>
+            <ColumnHeadings>
+              <ColumnHeading>
+                {tab.title} ({tab.requests.length})
+              </ColumnHeading>
+              <ColumnSubHeading>{tab.subtitle}</ColumnSubHeading>
+            </ColumnHeadings>
+            {tab.requests.map((req, index) => (
+              <RoadmapCard
+                key={index}
+                type={tab.title}
+                color={tab.color}
+                req={req}
+              />
+            ))}
+          </Column>
+        );
+      })}
     </Container>
   );
 }

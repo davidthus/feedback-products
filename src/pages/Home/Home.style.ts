@@ -50,10 +50,22 @@ export const LeftSide = styled.header`
 
 export const RightSide = styled.section`
   display: flex;
-  gap: 1rem;
   flex-direction: column;
   width: 100%;
   position: relative;
+  gap: 1rem;
+`;
+
+export const RequestsWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+
+  @media screen and (max-width: 650px) {
+    padding-inline: max(0.2rem, 1.5vw);
+  }
 `;
 
 export const Header = styled.section`
@@ -76,6 +88,7 @@ export const Header = styled.section`
   }
 
   @media screen and (max-width: 650px) {
+    background-image: url(/assets/suggestions/mobile/background-header.png);
     border-radius: 0;
     flex-direction: row;
     justify-content: space-between;

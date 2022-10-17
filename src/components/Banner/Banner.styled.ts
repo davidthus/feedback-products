@@ -10,7 +10,7 @@ export const Container = styled.aside`
   padding: 1rem 1.75rem;
 
   @media screen and (max-width: 650px) {
-    border-radius: ${(props: any) => (props.roadmap ? props.theme.br : 0)};
+    border-radius: 0;
   }
 
   @media screen and (max-width: 650px) {
@@ -34,13 +34,6 @@ export const AddFeedback = styled.button`
   font-weight: bold;
   border: none;
   font-size: 1rem;
-  display: ${(props: any) => (props.mobile ? "none" : "inline-block")};
-
-  @media screen and (max-width: 650px) {
-    display: ${(props: any) => (props.mobile ? "inline-block" : "none")};
-    font-size: ${(props: any) => (props.mobile ? "2rem" : "1rem")};
-    padding: ${(props: any) => (props.mobile ? "0 1rem" : "0.6rem 1rem")};
-  }
 `;
 
 export const FilterSuggestionsWrapper = styled.div`

@@ -21,6 +21,7 @@ import {
   NotFoundParagraph,
   NotFoundWrapper,
   Overlay,
+  RequestsWrapper,
   RightSide,
 } from "./Home.style";
 
@@ -75,35 +76,8 @@ function Home() {
           {menuOpen && isMobileSize && <Overlay />}
 
           <Banner setSortOrder={setSortOrder} requests={productRequests} />
-          {productRequests
-            .filter((req: request) => req.status === "suggestion")
-            .sort((a, b): any => {
-              switch (sortOrder) {
-                case "most-upvotes":
-                  return b.upvotes - a.upvotes;
-                case "least-upvotes":
-                  return a.upvotes - b.upvotes;
-                case "most-comments":
-                  return b.comments.length - a.comments.length;
-                case "least-comments":
-                  return a.comments.length - b.comments.length;
-                default:
-                  return b.upvotes - a.upvotes;
-              }
-            })
-            .filter((req) => {
-              if (category === "all") {
-                return req;
-              } else {
-                return req.category === category;
-              }
-            })
-            .map((req) => {
-              return <FeedbackCard key={req.id} feedback={req} />;
-            }).length === 0 ? (
-            <NotFound />
-          ) : (
-            productRequests
+          <RequestsWrapper>
+            {productRequests
               .filter((req: request) => req.status === "suggestion")
               .sort((a, b): any => {
                 switch (sortOrder) {
@@ -128,8 +102,37 @@ function Home() {
               })
               .map((req) => {
                 return <FeedbackCard key={req.id} feedback={req} />;
-              })
-          )}
+              }).length === 0 ? (
+              <NotFound />
+            ) : (
+              productRequests
+                .filter((req: request) => req.status === "suggestion")
+                .sort((a, b): any => {
+                  switch (sortOrder) {
+                    case "most-upvotes":
+                      return b.upvotes - a.upvotes;
+                    case "least-upvotes":
+                      return a.upvotes - b.upvotes;
+                    case "most-comments":
+                      return b.comments.length - a.comments.length;
+                    case "least-comments":
+                      return a.comments.length - b.comments.length;
+                    default:
+                      return b.upvotes - a.upvotes;
+                  }
+                })
+                .filter((req) => {
+                  if (category === "all") {
+                    return req;
+                  } else {
+                    return req.category === category;
+                  }
+                })
+                .map((req) => {
+                  return <FeedbackCard key={req.id} feedback={req} />;
+                })
+            )}
+          </RequestsWrapper>
         </RightSide>
       </AppWrapper>
     </Container>

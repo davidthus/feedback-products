@@ -10,8 +10,8 @@ type EventType = MediaQueryList | MediaQueryListEvent;
 
 export const useMatchMedia = (): UseMatchMediaType => {
   const mobileQuery = matchMedia("(min-width: 10px) and (max-width: 650px)");
-  const tabletQuery = matchMedia("(min-width: 650px) and (max-width: 900px)");
-  const desktopQuery = matchMedia("(min-width: 900px)");
+  const tabletQuery = matchMedia("(min-width: 651px) and (max-width: 900px)");
+  const desktopQuery = matchMedia("(min-width: 901px)");
 
   const [isMobileSize, setIsMobileSize] = useState(false);
   const [isTabletSize, setIsTabletSize] = useState(false);

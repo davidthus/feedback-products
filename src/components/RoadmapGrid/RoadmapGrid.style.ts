@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  display: grid;
+  display: ${(props: any) => (props.mobile ? "block" : "grid")};
+  padding: ${(props: any) => (props.mobile ? "2rem 1rem" : 0)};
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   width: 100%;
