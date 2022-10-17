@@ -1,7 +1,5 @@
-import Add from "./Add/Add";
-import Edit from "./Edit/Edit";
-import Feedback from "./Feedback/Feedback";
-import Home from "./Home/Home";
-import Roadmap from "./Roadmap/Roadmap";
-
-export { Feedback, Add, Edit, Home, Roadmap };
+export { default as Add } from "./Add/Add";
+export { default as Edit } from "./Edit/Edit";
+export { default as Feedback } from "./Feedback/Feedback";
+export { default as Home } from "./Home/Home";
+export { default as Roadmap } from "./Roadmap/Roadmap";
