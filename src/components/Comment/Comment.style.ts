@@ -10,7 +10,7 @@ export const Container = styled.article`
     padding-bottom: 3rem;
   }
 
-  @media screen and (max-width: 600px) {
+  @media (max-width: 600px) {
     gap: min(0.2rem, 3vw);
   }
 `;

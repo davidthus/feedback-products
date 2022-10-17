@@ -9,11 +9,11 @@ export const Container = styled.aside`
   align-items: center;
   padding: 1rem 1.75rem;
 
-  @media screen and (max-width: 650px) {
+  @media (max-width: 650px) {
     border-radius: 0;
   }
 
-  @media screen and (max-width: 650px) {
+  @media (max-width: 650px) {
     padding: 1rem;
   }
 `;
@@ -47,7 +47,7 @@ export const NumOfSuggestions = styled.p`
   font-size: 1.2rem;
   font-weight: bold;
 
-  @media screen and (max-width: 650px) {
+  @media (max-width: 650px) {
     display: none;
   }
 `;
@@ -80,7 +80,8 @@ export const BackAnchor = styled.button`
 `;
 
 export const LightBulb = styled.img`
-  @media screen and (max-width: 650px) {
+
+  @media (max-width: 650px) {
     display: none;
   }
 `;

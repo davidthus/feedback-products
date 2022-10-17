@@ -1,9 +1,3 @@
-import React from "react";
-import { Controller, useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
-import Select from "react-select";
-import { useAppDispatch } from "../../app/hooks";
-import { addFeedback } from "../../features/FeedbackSlice";
 import {
   AddFeedbackButton,
   AddIcon,
@@ -21,13 +15,15 @@ import {
   MainHeading,
   TopWrapper,
 } from "./AddFeedback.style";
+import { Controller, useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
 
-interface CategoriesOption {
-  value: string;
-  label: string;
-}
+import React from "react";
+import Select from "react-select";
+import { addFeedback } from "../../features/FeedbackSlice";
+import { useAppDispatch } from "../../app/hooks";
 
-export const categoryOptions: CategoriesOption[] = [
+export const categoryOptions = [
   { value: "ux", label: "UX" },
   { value: "ui", label: "UI" },
   { value: "enhancement", label: "Enhancement" },

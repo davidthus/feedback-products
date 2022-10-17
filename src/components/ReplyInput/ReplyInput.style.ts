@@ -17,7 +17,7 @@ export const TextArea = styled.textarea`
   height: 6rem;
   color: ${(props: any) => props.theme.lightBlue};
 
-  @media screen and (max-width: 600px) {
+  @media   (max-width: 600px) {
     width: 100%;
   }
 `;
@@ -37,7 +37,7 @@ export const PostReply = styled.button`
     background: rgb(199, 90, 246);
   }
 
-  @media screen and (max-width: 600px) {
+  @media   (max-width: 600px) {
     max-width: 9rem;
   }
 `;
@@ -54,7 +54,7 @@ export const Inputs = styled.div`
   display: flex;
   gap: 2rem;
 
-  @media screen and (max-width: 600px) {
+  @media   (max-width: 600px) {
     flex-direction: column;
     align-items: flex-end;
     gap: 1rem;
