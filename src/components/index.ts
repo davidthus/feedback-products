@@ -1,33 +1,16 @@
-import AddFeedback from "./AddFeedback/AddFeedback";
-import Banner from "./Banner/Banner";
-import Comment from "./Comment/Comment";
-import CommentContainer from "./CommentsContainer/CommentContainer";
-import EditFeedback from "./EditFeedback/EditFeedback";
-import FeedbackCard from "./FeedbackCard/FeedbackCard";
-import Filter from "./Filter/Filter";
-import Input from "./Input/Input";
-import RepliesContainer from "./RepliesContainer/RepliesContainer";
-import Reply from "./Reply/Reply";
-import ReplyInput from "./ReplyInput/ReplyInput";
-import RoadmapCard from "./RoadmapCard/RoadmapCard";
-import RoadmapGrid from "./RoadmapGrid/RoadmapGrid";
-import RoadmapLink from "./RoadmapLink/RoadmapLink";
-import Upvote from "./Upvote/Upvote";
+export { default as AddFeedback } from "./AddFeedback/AddFeedback";
+export { default as Banner }from "./Banner/Banner";
+export { default as Comment} from "./Comment/Comment";
+export{ default as CommentContainer } from "./CommentsContainer/CommentContainer";
+export{ default as EditFeedback } from "./EditFeedback/EditFeedback";
+export{ default as FeedbackCard } from "./FeedbackCard/FeedbackCard";
+export{ default as Filter } from "./Filter/Filter";
+export{ default as Input } from "./Input/Input";
+export{ default as RepliesContainer } from "./RepliesContainer/RepliesContainer";
+export{ default as Reply } from "./Reply/Reply";
+export{ default as ReplyInput } from "./ReplyInput/ReplyInput";
+export{ default as RoadmapCard } from "./RoadmapCard/RoadmapCard";
+export{ default as RoadmapGrid } from "./RoadmapGrid/RoadmapGrid";
+export{ default as RoadmapLink } from "./RoadmapLink/RoadmapLink";
+export{ default as Upvote } from "./Upvote/Upvote";
 
-export {
-  AddFeedback,
-  Banner,
-  Comment,
-  CommentContainer,
-  EditFeedback,
-  FeedbackCard,
-  Filter,
-  Input,
-  RepliesContainer,
-  RoadmapCard,
-  RoadmapGrid,
-  RoadmapLink,
-  Upvote,
-  ReplyInput,
-  Reply,
-};
