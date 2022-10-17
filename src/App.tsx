@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import { Add, Edit, Feedback, Home, Roadmap } from "./pages";
 
 export interface user {
