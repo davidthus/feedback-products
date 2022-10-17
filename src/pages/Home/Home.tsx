@@ -15,10 +15,12 @@ import {
   IconWrapper,
   LeftSide,
   MenuToggle,
+  MobileMenu,
   NotFoundContainer,
   NotFoundHeading,
   NotFoundParagraph,
   NotFoundWrapper,
+  Overlay,
   RightSide,
 } from "./Home.style";
 
@@ -55,6 +57,12 @@ function Home() {
                 </MenuToggle>
               </IconWrapper>
             )}
+            {menuOpen && isMobileSize && (
+              <MobileMenu>
+                <Filter category={category} setCategory={setCategory} />
+                <RoadmapLink productRequests={productRequests} />
+              </MobileMenu>
+            )}
           </Header>
           {(isTabletSize || isDesktopSize) && (
             <>
@@ -63,7 +71,9 @@ function Home() {
             </>
           )}
         </LeftSide>
-        <RightSide>
+        <RightSide menuOpen={menuOpen ? true : false}>
+          {menuOpen && isMobileSize && <Overlay />}
+
           <Banner setSortOrder={setSortOrder} requests={productRequests} />
           {productRequests
             .filter((req: request) => req.status === "suggestion")

@@ -53,6 +53,7 @@ export const RightSide = styled.section`
   gap: 1rem;
   flex-direction: column;
   width: 100%;
+  position: relative;
 `;
 
 export const Header = styled.section`
@@ -61,6 +62,7 @@ export const Header = styled.section`
   width: 100%;
   border-radius: ${(props: { theme: any }) => props.theme.br};
   padding: 1rem;
+  position: relative;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
@@ -77,6 +79,8 @@ export const Header = styled.section`
     border-radius: 0;
     flex-direction: row;
     justify-content: space-between;
+    opacity: 1;
+    z-index: 10;
   }
 `;
 
@@ -147,4 +151,35 @@ export const IconWrapper = styled.div`
   justify-content: flex-end;
   align-items: center;
   height: 100%;
+`;
+
+export const MobileMenu = styled.div`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 81px;
+  display: none;
+  width: clamp(260px, 60vw, 350px);
+  height: calc(100vh - 81px);
+  background-color: ${(props: any) => props.theme.ghost};
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  align-items: flex-start;
+  gap: 1rem;
+  z-index: 10;
+  opacity: 1;
+
+  @media screen and (max-width: 650px) {
+    display: flex;
+  }
+`;
+
+export const Overlay = styled.div`
+  display: block;
+  position: absolute;
+  inset: 0px;
+  z-index: 5;
+  background-color: black;
+  opacity: 0.5;
 `;
