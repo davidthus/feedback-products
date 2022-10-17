@@ -141,7 +141,6 @@ function AddFeedback() {
         </Group>
         <ButtonsWrapper>
           <CancelWrapper>
-            {/* <Link to="/" style={{ textDecoration: "none" }}> */}
             <Cancel
               onClick={(e: any) => {
                 e.preventDefault();
@@ -150,7 +149,6 @@ function AddFeedback() {
             >
               Cancel
             </Cancel>
-            {/* </Link> */}
           </CancelWrapper>
           <AddFeedbackButton type="submit">Add Feedback</AddFeedbackButton>
         </ButtonsWrapper>

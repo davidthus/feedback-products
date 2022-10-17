@@ -182,7 +182,6 @@ function EditFeedback() {
             Delete
           </Delete>
           <CancelWrapper>
-            {/* <Link to="/" style={{ textDecoration: "none" }}> */}
             <Cancel
               onClick={(e: any) => {
                 e.preventDefault();
@@ -191,7 +190,6 @@ function EditFeedback() {
             >
               Cancel
             </Cancel>
-            {/* </Link> */}
           </CancelWrapper>
           <SaveChanges type="submit">Save Changes</SaveChanges>
         </ButtonsWrapper>
