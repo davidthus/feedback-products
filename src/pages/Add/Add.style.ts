@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
 
-  @media screen and (max-width: 700px) {
+  @media   (max-width: 700px) {
     padding: 0;
     padding-right: 0.45rem;
   }
