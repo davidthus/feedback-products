@@ -1,5 +1,5 @@
 import { Controller, useForm } from "react-hook-form";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Select from "react-select";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { deleteFeedback, editFeedback } from "../../features/FeedbackSlice";
@@ -19,7 +19,7 @@ import {
   GroupTextArea,
   MainHeading,
   SaveChanges,
-  TopWrapper,
+  TopWrapper
 } from "./EditFeedback.style";
 
 interface Options {

@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const Container = styled.article`
+export const Container = styled(motion.article)`
   width: 100%;
   background-color: ${(props: any) => props.theme.white};
   border-radius: ${(props: any) => props.theme.br};
@@ -18,14 +19,14 @@ export const Container = styled.article`
         : `1px solid ${props.theme.purple}`};
   }
 
-  @media   (max-width: 600px) {
+  @media (max-width: 600px) {
     flex-direction: column;
     gap: 2rem;
     padding: 2rem 1rem;
   }
 `;
 
-export const HomeContainer = styled.article`
+export const HomeContainer = styled(motion.article)`
   width: 100%;
   background-color: ${(props: any) => props.theme.white};
   border-radius: ${(props: any) => props.theme.br};
@@ -43,7 +44,7 @@ export const HomeContainer = styled.article`
         : `1px solid ${props.theme.purple}`};
   }
 
-  @media   (max-width: 1000px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
     gap: 2rem;
     padding: 2rem 1rem;
@@ -56,7 +57,7 @@ export const LeftSide = styled.div`
   gap: 2rem;
   flex: 1;
 
-  @media   (max-width: 600px) {
+  @media (max-width: 600px) {
     width: 100%;
   }
 `;
@@ -67,7 +68,7 @@ export const HomeLeftSide = styled.div`
   gap: 2rem;
   flex: 1;
 
-  @media   (max-width: 1000px) {
+  @media (max-width: 1000px) {
     width: 100%;
   }
 `;
@@ -119,7 +120,7 @@ export const BottomWrapper = styled.aside`
   align-items: center;
   display: none;
 
-  @media   (max-width: 600px) {
+  @media (max-width: 600px) {
     display: flex;
   }
 `;
@@ -130,7 +131,7 @@ export const HomeBottomWrapper = styled.aside`
   align-items: center;
   display: none;
 
-  @media   (max-width: 1000px) {
+  @media (max-width: 1000px) {
     display: flex;
   }
 `;
@@ -138,7 +139,7 @@ export const HomeBottomWrapper = styled.aside`
 export const UpvoteWrapper = styled.div`
   display: flex;
 
-  @media   (max-width: 600px) {
+  @media (max-width: 600px) {
     display: none;
   }
 `;
@@ -146,7 +147,7 @@ export const UpvoteWrapper = styled.div`
 export const HomeUpvoteWrapper = styled.div`
   display: flex;
 
-  @media   (max-width: 1000px) {
+  @media (max-width: 1000px) {
     display: none;
   }
 `;
@@ -154,7 +155,7 @@ export const HomeUpvoteWrapper = styled.div`
 export const NumOfCommentsDesktop = styled.div`
   display: flex;
 
-  @media   (max-width: 600px) {
+  @media (max-width: 600px) {
     display: none;
   }
 `;
@@ -162,7 +163,7 @@ export const NumOfCommentsDesktop = styled.div`
 export const HomeNumOfCommentsDesktop = styled.div`
   display: flex;
 
-  @media   (max-width: 1000px) {
+  @media (max-width: 1000px) {
     display: none;
   }
 `;

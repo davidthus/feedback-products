@@ -21,6 +21,11 @@ import {
   UpvoteWrapper,
 } from "./FeedbackCard.style";
 
+const item = {
+  visible: { opacity: 1, x: 0 },
+  hidden: { opacity: 0, x: -100 },
+};
+
 function FeedbackCard({
   feedback: { id, category, title, description, comments, upvotes, upvoted },
   page,
@@ -29,7 +34,11 @@ function FeedbackCard({
   page?: boolean;
 }) {
   return page ? (
-    <Container page>
+    <Container
+      animate={{ y: 0, opacity: 1 }}
+      initial={{ y: 100, opacity: 0 }}
+      page
+    >
       <LeftSide>
         <UpvoteWrapper>
           <Upvote upvotes={upvotes} id={id} upvoted={upvoted} />
@@ -56,7 +65,7 @@ function FeedbackCard({
     </Container>
   ) : (
     <Link to={"/" + id} style={{ textDecoration: "none", width: "100%" }}>
-      <HomeContainer>
+      <HomeContainer variants={item}>
         <HomeLeftSide>
           <HomeUpvoteWrapper>
             <Upvote upvotes={upvotes} id={id} upvoted={upvoted} />

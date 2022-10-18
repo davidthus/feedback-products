@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
 
-  @media   (max-width: 700px) {
+  @media (max-width: 700px) {
     padding: 0;
     padding-right: 0.45rem;
   }
@@ -20,7 +20,7 @@ export const AppWrapper = styled.main`
   max-width: 500px;
   flex-direction: column;
 
-  @media   (max-width: 700px) {
+  @media (max-width: 700px) {
     max-width: 100vw;
   }
 `;

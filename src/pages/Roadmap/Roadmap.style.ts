@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
 
-  @media   (max-width: 650px) {
+  @media (max-width: 650px) {
     padding: 0;
   }
 `;
@@ -19,7 +19,7 @@ export const RoadmapWrapper = styled.main`
   width: 100%;
   max-width: 1000px;
 
-  @media   (max-width: 650px) {
+  @media (max-width: 650px) {
     gap: 0;
   }
 `;

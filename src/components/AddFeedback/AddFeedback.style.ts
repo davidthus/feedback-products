@@ -6,7 +6,7 @@ export const Container = styled.main`
   border-radius: ${(props: any) => props.theme.br};
   padding: 0;
 
-  @media   (max-width: 700px) {
+  @media (max-width: 700px) {
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -22,7 +22,7 @@ export const AddIcon = styled.img`
 export const TopWrapper = styled.aside`
   padding-inline: 1.75rem;
 
-  @media   (max-width: 700px) {
+  @media (max-width: 700px) {
     display: none;
   }
 `;
@@ -33,7 +33,7 @@ export const BottomWrapper = styled.form`
   flex-direction: column;
   gap: 2rem;
 
-  @media   (max-width: 700px) {
+  @media (max-width: 700px) {
     padding: 5rem 1rem 2rem;
   }
 `;
@@ -97,7 +97,7 @@ export const ButtonsWrapper = styled.div`
   justify-content: flex-end;
   gap: 1rem;
 
-  @media   (max-width: 300px) {
+  @media (max-width: 300px) {
     flex-direction: column;
     width: 100%;
   }
@@ -111,7 +111,7 @@ const Button = styled.button`
   font-size: 1.1rem;
   cursor: pointer;
 
-  @media   (max-width: 300px) {
+  @media (max-width: 300px) {
     width: 100%;
   }
 `;
@@ -129,7 +129,7 @@ export const AddFeedbackButton = styled(Button)`
 export const CancelWrapper = styled.div`
   width: auto;
 
-  @media   (max-width: 300px) {
+  @media (max-width: 300px) {
     width: 100%;
   }
 `;

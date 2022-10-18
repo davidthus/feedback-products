@@ -25,6 +25,18 @@ import {
   RightSide,
 } from "./Home.style";
 
+const list = {
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+  hidden: {
+    opacity: 0,
+  },
+};
+
 function Home() {
   const productRequests = useAppSelector((state) => state.feedback);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -76,7 +88,7 @@ function Home() {
           {menuOpen && isMobileSize && <Overlay />}
 
           <Banner setSortOrder={setSortOrder} requests={productRequests} />
-          <RequestsWrapper>
+          <RequestsWrapper initial="hidden" animate="visible" variants={list}>
             {productRequests
               .filter((req: request) => req.status === "suggestion")
               .sort((a, b): any => {

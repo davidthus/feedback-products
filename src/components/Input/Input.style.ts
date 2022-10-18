@@ -10,7 +10,7 @@ export const Container = styled.form`
   align-items: center;
   gap: 2rem;
 
-  @media   (max-width: 600px) {
+  @media (max-width: 600px) {
     padding: 2rem 1rem;
   }
 `;
@@ -39,7 +39,7 @@ export const BottomWrapper = styled.div`
   align-items: center;
   width: 100%;
 
-  @media   (max-width: 600px) {
+  @media (max-width: 600px) {
     flex-direction: column;
     gap: 1.5rem;
     align-items: flex-end;
@@ -67,7 +67,7 @@ export const CharactersLeft = styled.p`
   text-align: left;
   flex: 1;
 
-  @media   (max-width: 600px) {
+  @media (max-width: 600px) {
     text-align: left;
     width: 100%;
   }

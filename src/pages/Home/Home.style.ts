@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -7,7 +8,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
 
-  @media   (max-width: 650px) {
+  @media (max-width: 650px) {
     padding: 0;
   }
 `;
@@ -19,11 +20,11 @@ export const AppWrapper = styled.main`
   max-width: 1300px;
   padding: 1rem;
 
-  @media   (max-width: 900px) {
+  @media (max-width: 900px) {
     flex-direction: column;
   }
 
-  @media   (max-width: 650px) {
+  @media (max-width: 650px) {
     padding: 0;
     gap: 0;
   }
@@ -36,13 +37,13 @@ export const LeftSide = styled.header`
   min-width: 250px;
   max-width: 250px;
 
-  @media   (max-width: 900px) {
+  @media (max-width: 900px) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
     max-width: fit-content;
   }
-  @media   (max-width: 650px) {
+  @media (max-width: 650px) {
     display: flex;
     max-width: 100%;
   }
@@ -56,14 +57,14 @@ export const RightSide = styled.section`
   gap: 1rem;
 `;
 
-export const RequestsWrapper = styled.div`
+export const RequestsWrapper = styled(motion.section)`
   display: flex;
   gap: 1rem;
   flex-direction: column;
   width: 100%;
   padding: 0;
 
-  @media   (max-width: 650px) {
+  @media (max-width: 650px) {
     padding-inline: max(0.2rem, 1.5vw);
   }
 `;
@@ -80,14 +81,14 @@ export const Header = styled.section`
   justify-content: flex-end;
   flex-direction: column;
 
-  @media   (max-width: 900px) {
+  @media (max-width: 900px) {
     height: 100%;
     background-image: url(/assets/suggestions/tablet/background-header.png);
     background-repeat: no-repeat;
     background-size: cover;
   }
 
-  @media   (max-width: 650px) {
+  @media (max-width: 650px) {
     background-image: url(/assets/suggestions/mobile/background-header.png);
     border-radius: 0;
     flex-direction: row;
@@ -183,7 +184,7 @@ export const MobileMenu = styled.div`
   z-index: 10;
   opacity: 1;
 
-  @media   (max-width: 650px) {
+  @media (max-width: 650px) {
     display: flex;
   }
 `;
