@@ -37,6 +37,7 @@ export const Content = styled.p`
   color: ${(props: any) => props.theme.lightBlue};
   width: 100%;
   font-weight: 500;
+  word-break: break-word;
 `;
 
 export const UserDetails = styled.div`
